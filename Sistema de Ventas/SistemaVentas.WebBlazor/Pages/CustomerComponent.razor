@@ -1,0 +1,43 @@
+﻿@page "/customers"
+@using SistemaVentas.WebBlazor.Data
+@using SistemaVentas.Entidades
+@inject CustomerService Service
+
+<h3>Lista de Clientes</h3>
+
+@if (Customers == null)
+{
+    <strong>Cargando....</strong>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <td>Nombres Completos</td>
+            <td>Fecha Nacimiento</td>
+            <td>Correo Electronico</td>
+        </tr>
+        </thead>
+        @foreach (var customer in Customers)
+        {
+            <tr>
+                <td>@customer.FullName</td>
+                <td>@customer.BirthDate.ToString("yyyy MMM dd")</td>
+                <td>@customer.Email</td>
+            </tr>
+        }
+    </table>
+}
+
+
+@code {
+
+    public ICollection<Customer> Customers { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Customers = await Service.GetCustomers();
+    }
+
+}
