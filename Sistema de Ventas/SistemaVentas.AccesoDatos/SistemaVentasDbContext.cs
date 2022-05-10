@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using SistemaVentas.Entidades;
+﻿using System.Reflection;
+using Microsoft.EntityFrameworkCore;
 
 namespace SistemaVentas.AccesoDatos
 {
@@ -16,12 +16,16 @@ namespace SistemaVentas.AccesoDatos
             
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=VentasDB;Trusted_Connection=True");
+            base.OnModelCreating(modelBuilder);
+
+            //modelBuilder.ApplyConfiguration(new CustomerConfiguration());
+
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
 
-        public DbSet<Customer> Customers { get; set; }
+        // Esto ya no es necesario
+        //public DbSet<Customer> Customers { get; set; }
     }
 }

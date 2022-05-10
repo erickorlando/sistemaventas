@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SistemaVentas.AccesoDatos;
 
@@ -11,9 +12,10 @@ using SistemaVentas.AccesoDatos;
 namespace SistemaVentas.AccesoDatos.Migrations
 {
     [DbContext(typeof(SistemaVentasDbContext))]
-    partial class SistemaVentasDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220510222350_InitialData-UoM")]
+    partial class InitialDataUoM
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -97,40 +99,6 @@ namespace SistemaVentas.AccesoDatos.Migrations
                     b.HasIndex("UnitOfMeasureId");
 
                     b.ToTable("Products", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Leche Gloria",
-                            SkuCode = "00013",
-                            Status = true,
-                            UnitOfMeasureId = 2
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Leche Laive",
-                            SkuCode = "00014",
-                            Status = true,
-                            UnitOfMeasureId = 2
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Barra de Halls Azul",
-                            SkuCode = "45666",
-                            Status = true,
-                            UnitOfMeasureId = 1
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "Barra de Halls Negro",
-                            SkuCode = "35533",
-                            Status = true,
-                            UnitOfMeasureId = 1
-                        });
                 });
 
             modelBuilder.Entity("SistemaVentas.Entidades.UnitOfMeasure", b =>

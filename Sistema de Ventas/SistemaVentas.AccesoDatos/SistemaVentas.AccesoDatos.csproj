@@ -14,4 +14,8 @@
     <ProjectReference Include="..\SistemaVentas.Entidades\SistemaVentas.Entidades.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Configurations\" />
+  </ItemGroup>
+
 </Project>

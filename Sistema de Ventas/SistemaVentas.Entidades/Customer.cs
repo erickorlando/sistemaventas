@@ -1,12 +1,15 @@
 ﻿namespace SistemaVentas.Entidades
 {
-    public class Customer
+    public class Customer : EntityBase
     {
-        public int Id { get; set; }
-        public string FullName { get; set; }
-        public string DocumentNumber { get; set; }
+        public string FullName { get; set; } = null!;
+
+        public string DocumentNumber { get; set; } = null!;
+
         public TypeDocument TypeDocument { get; set; }
-        public DateTime BirthDate { get; set; }
-        public string Email { get; set; }
+        
+        public DateTime? BirthDate { get; set; }
+
+        public string Email { get; set; } = null!;
     }
 }
