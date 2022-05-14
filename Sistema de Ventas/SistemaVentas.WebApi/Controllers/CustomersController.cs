@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using SistemaVentas.AccesoDatos;
-using SistemaVentas.Entidades;
+using SistemasVentas.Dto.Request;
+using SistemasVentas.Services;
 
 namespace SistemaVentas.WebApi.Controllers
 {
@@ -9,20 +8,49 @@ namespace SistemaVentas.WebApi.Controllers
     [ApiController]
     public class CustomersController : ControllerBase
     {
-        private readonly SistemaVentasDbContext _context;
+        private readonly ICustomerService _service;
 
-        public CustomersController(SistemaVentasDbContext context)
+        public CustomersController(ICustomerService service)
         {
-            _context = context;
+            _service = service;
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get(string? filter)
         {
-            var collection = await _context.Set<Customer>().ToListAsync();
-
-            return Ok(collection);
+            return Ok(await _service.GetAllAsync(filter));
         }
 
+        [HttpGet("deleted")]
+        public async Task<IActionResult> GetAllIncludeDeleted()
+        {
+            return Ok(await _service.GetAllAsync());
+        }
+
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var response = await _service.GetByIdAsync(id);
+
+            return response.Success ? Ok(response) : NotFound(response);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] CustomerDtoRequest request)
+        {
+            return Ok(await _service.CreateAsync(request));
+        }
+
+        [HttpPut("{id:int}")]
+        public async Task<IActionResult> Put(int id, [FromBody] CustomerDtoRequest request)
+        {
+            return Ok(await _service.UpdateAsync(id, request));
+        }
+
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> DeleteById(int id)
+        {
+            return Ok(await _service.DeleteAsync(id));
+        }
     }
 }

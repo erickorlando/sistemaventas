@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using SistemaVentas.AccesoDatos;
+using SistemasVentas.Services;
+using SistemaVentas.DataAccess;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,8 @@ builder.Services.AddDbContext<SistemaVentasDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("Conexion"));
 });
+
+builder.Services.AddDependencyInjection();
 
 var app = builder.Build();
 

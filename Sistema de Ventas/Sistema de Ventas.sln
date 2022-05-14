@@ -5,9 +5,9 @@ VisualStudioVersion = 17.1.32414.318
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaVentas.WebApi", "SistemaVentas.WebApi\SistemaVentas.WebApi.csproj", "{022F74E0-1CCD-4C13-A0A3-E1FFEFFE3C51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaVentas.Entidades", "SistemaVentas.Entidades\SistemaVentas.Entidades.csproj", "{CD5BF8F4-5368-486E-84BF-F9F71BBB7237}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaVentas.Entities", "SistemaVentas.Entidades\SistemaVentas.Entities.csproj", "{CD5BF8F4-5368-486E-84BF-F9F71BBB7237}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaVentas.AccesoDatos", "SistemaVentas.AccesoDatos\SistemaVentas.AccesoDatos.csproj", "{0191C832-A5B3-4ED7-8E1E-BC6BA4D194EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaVentas.DataAccess", "SistemaVentas.AccesoDatos\SistemaVentas.DataAccess.csproj", "{0191C832-A5B3-4ED7-8E1E-BC6BA4D194EC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaVentas.WebBlazor", "SistemaVentas.WebBlazor\SistemaVentas.WebBlazor.csproj", "{9B45FAFF-C0DA-4908-B965-32CB14628B1F}"
 EndProject
@@ -15,6 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemasVentas.Services", "SistemasVentas.Services\SistemasVentas.Services.csproj", "{EFE73C18-A82E-424F-B5D6-9BEC742C7665}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemasVentas.Dto", "SistemasVentas.Dto\SistemasVentas.Dto.csproj", "{6614525E-8EB4-481A-BF81-455FF72B9D89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +42,14 @@ Global
 		{9B45FAFF-C0DA-4908-B965-32CB14628B1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B45FAFF-C0DA-4908-B965-32CB14628B1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B45FAFF-C0DA-4908-B965-32CB14628B1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFE73C18-A82E-424F-B5D6-9BEC742C7665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFE73C18-A82E-424F-B5D6-9BEC742C7665}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFE73C18-A82E-424F-B5D6-9BEC742C7665}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFE73C18-A82E-424F-B5D6-9BEC742C7665}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6614525E-8EB4-481A-BF81-455FF72B9D89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6614525E-8EB4-481A-BF81-455FF72B9D89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6614525E-8EB4-481A-BF81-455FF72B9D89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6614525E-8EB4-481A-BF81-455FF72B9D89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

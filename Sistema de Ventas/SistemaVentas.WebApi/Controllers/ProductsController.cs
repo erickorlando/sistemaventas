@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SistemaVentas.AccesoDatos;
-using SistemaVentas.Entidades;
+using SistemaVentas.DataAccess;
+using SistemaVentas.Entities;
 
 namespace SistemaVentas.WebApi.Controllers;
 

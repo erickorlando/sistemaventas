@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using SistemaVentas.Entidades;
+using SistemaVentas.Entities;
 
-namespace SistemaVentas.AccesoDatos.Configurations;
+namespace SistemaVentas.DataAccess.Configurations;
 
 public class ProductConfiguration : IEntityTypeConfiguration<Product>
 {
@@ -17,10 +17,13 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
 
         builder.Property(p => p.RegisterDate)
             .HasColumnType("DATE");
-            //.HasDefaultValueSql("getdate()");
-        
+        //.HasDefaultValueSql("getdate()");
+
         builder.Property(p => p.Notes)
             .HasMaxLength(200);
+
+        builder.Property(p => p.UnitPrice)
+            .HasPrecision(11, 2);
 
         // Esto solo si la relacion no cumple la convencion
         //builder.HasOne(p => p.UnitOfMeasure)
@@ -32,10 +35,10 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
 
         builder.HasData(new List<Product>
         {
-            new Product { Id = 1, Name = "Leche Gloria", SkuCode = "00013", UnitOfMeasureId = 2},
-            new Product { Id = 2, Name = "Leche Laive", SkuCode = "00014", UnitOfMeasureId = 2},
-            new Product { Id = 3, Name = "Barra de Halls Azul", SkuCode = "45666", UnitOfMeasureId = 1},
-            new Product { Id = 4, Name = "Barra de Halls Negro", SkuCode = "35533", UnitOfMeasureId = 1}
+            new Product { Id = 1, Name = "Leche Gloria", SkuCode = "00013", UnitPrice = 5.6m, UnitOfMeasureId = 2},
+            new Product { Id = 2, Name = "Leche Laive", SkuCode = "00014", UnitPrice = 4.2m, UnitOfMeasureId = 2},
+            new Product { Id = 3, Name = "Barra de Halls Azul", SkuCode = "45666", UnitPrice = 1.0m,UnitOfMeasureId = 1},
+            new Product { Id = 4, Name = "Barra de Halls Negro", SkuCode = "35533", UnitPrice = 1.1m,UnitOfMeasureId = 1}
         });
     }
 }

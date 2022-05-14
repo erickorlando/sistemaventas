@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using SistemaVentas.Entidades;
+using SistemaVentas.Entities;
 
-namespace SistemaVentas.AccesoDatos.Configurations;
+namespace SistemaVentas.DataAccess.Configurations;
 
 public class CustomerConfiguration : IEntityTypeConfiguration<Customer>
 {
@@ -22,5 +22,6 @@ public class CustomerConfiguration : IEntityTypeConfiguration<Customer>
 
        builder.ToTable("Customers");
 
+       builder.HasQueryFilter(p => p.Status);
     }
 }

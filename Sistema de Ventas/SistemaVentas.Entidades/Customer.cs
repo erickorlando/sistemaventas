@@ -1,4 +1,4 @@
-﻿namespace SistemaVentas.Entidades
+﻿namespace SistemaVentas.Entities
 {
     public class Customer : EntityBase
     {
@@ -11,5 +11,7 @@
         public DateTime? BirthDate { get; set; }
 
         public string Email { get; set; } = null!;
+
+        public HashSet<CustomerAddress>? Addresses { get; set; } 
     }
 }

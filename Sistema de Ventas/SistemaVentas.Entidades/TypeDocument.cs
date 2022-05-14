@@ -1,4 +1,4 @@
-﻿namespace SistemaVentas.Entidades;
+﻿namespace SistemaVentas.Entities;
 
 public enum TypeDocument
 {

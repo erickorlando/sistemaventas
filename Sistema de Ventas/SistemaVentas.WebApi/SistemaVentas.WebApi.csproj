@@ -7,14 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.4" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SistemaVentas.AccesoDatos\SistemaVentas.AccesoDatos.csproj" />
-    <ProjectReference Include="..\SistemaVentas.Entidades\SistemaVentas.Entidades.csproj" />
+    <ProjectReference Include="..\SistemasVentas.Dto\SistemasVentas.Dto.csproj" />
+    <ProjectReference Include="..\SistemasVentas.Services\SistemasVentas.Services.csproj" />
+    <ProjectReference Include="..\SistemaVentas.AccesoDatos\SistemaVentas.DataAccess.csproj" />
+    <ProjectReference Include="..\SistemaVentas.Entidades\SistemaVentas.Entities.csproj" />
   </ItemGroup>
 
 </Project>

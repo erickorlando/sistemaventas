@@ -1,4 +1,4 @@
-﻿namespace SistemaVentas.Entidades;
+﻿namespace SistemaVentas.Entities;
 
 public class Product : EntityBase
 {
@@ -7,5 +7,6 @@ public class Product : EntityBase
     public DateTime? RegisterDate { get; set; }
     public UnitOfMeasure UnitOfMeasure { get; set; } = null!;
     public int UnitOfMeasureId { get; set; }
+    public decimal UnitPrice { get; set; }
     public string? Notes { get; set; }
 }

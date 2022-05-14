@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 
-namespace SistemaVentas.AccesoDatos
+namespace SistemaVentas.DataAccess
 {
     public class SistemaVentasDbContext : DbContext
     {
